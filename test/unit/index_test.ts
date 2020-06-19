@@ -2,10 +2,10 @@
  * Module dependencies.
  */
 
-import express from "express";
-import request from 'supertest';
-import sinon from 'sinon';
-import should from 'should';
+import * as express from "express";
+import * as request from 'supertest';
+import * as sinon from 'sinon';
+import * as should from 'should';
 import { OAuth2Server as NodeOAuthServer, InvalidArgumentError, UnauthorizedRequestError, Request, Response } from 'oauth2-server-ts';
 import ExpressOAuthServer from "../..";
 

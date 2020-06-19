@@ -34,12 +34,12 @@ SET default_with_oids = false;
 
 CREATE TABLE oauth_tokens (
     id uuid NOT NULL,
-    access_token text NOT NULL,
-    access_token_expires_on timestamp without time zone NOT NULL,
-    client_id text NOT NULL,
-    refresh_token text NOT NULL,
-    refresh_token_expires_on timestamp without time zone NOT NULL,
-    user_id uuid NOT NULL
+    accessToken text NOT NULL,
+    accessTokenExpiresOn timestamp without time zone NOT NULL,
+    clientId text NOT NULL,
+    refreshToken text NOT NULL,
+    refreshTokenExpiresOn timestamp without time zone NOT NULL,
+    userId uuid NOT NULL
 );
 
 
@@ -48,9 +48,9 @@ CREATE TABLE oauth_tokens (
 --
 
 CREATE TABLE oauth_clients (
-    client_id text NOT NULL,
-    client_secret text NOT NULL,
-    redirect_uri text NOT NULL
+    clientId text NOT NULL,
+    clientSecret text NOT NULL,
+    redirectUri text NOT NULL
 );
 
 
@@ -78,7 +78,7 @@ ALTER TABLE ONLY oauth_tokens
 --
 
 ALTER TABLE ONLY oauth_clients
-    ADD CONSTRAINT oauth_clients_pkey PRIMARY KEY (client_id, client_secret);
+    ADD CONSTRAINT oauth_clients_pkey PRIMARY KEY (clientId, clientSecret);
 
 
 --

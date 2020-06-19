@@ -1,42 +1,18 @@
 {
-    "version": "2.4.2",
     "compilerOptions": {
-        "baseUrl": ".",
-        "target": "es2016",
-        "module": "commonjs",
-        "lib": [
-            "es6",
-            "es7"
-        ],
-        "sourceMap": true,
-        "outDir": "./build",
-
-        "strict": true,
-        "noImplicitAny": false,
-        "noImplicitThis": false,
-        "strictPropertyInitialization": false,
-        "strictNullChecks": false,
-
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-
-        "moduleResolution": "node",
-
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "resolveJsonModule": true,
-
-        "typeRoots": [
-            "./node_modules/@types",
-            "./types"
-        ],
+      "module": "commonjs",
+      "declaration": true,
+      "removeComments": true,
+      // "emitDecoratorMetadata": true,
+      // "experimentalDecorators": true,
+      "lib": ["es2017"],
+      "target": "es2017",
+      "sourceMap": true,
+      "importHelpers": true,
+      "outDir": "./dist",
+      "baseUrl": ".",
+      "typeRoots": ["node_modules/@types"]
     },
-    "include": [
-        "src",
-        "test",
-        "types"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
-}
+    "exclude": ["node_modules", "./dist"]
+  }
+  

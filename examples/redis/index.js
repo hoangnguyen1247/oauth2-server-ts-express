@@ -24,12 +24,12 @@ app.post('/oauth/token', app.oauth.token());
 
 // Get secret.
 app.get('/secret', app.oauth.authorize(), function(req, res) {
-  // Will require a valid access_token.
+  // Will require a valid accessToken.
   res.send('Secret area');
 });
 
 app.get('/public', function(req, res) {
-  // Does not require an access_token.
+  // Does not require an accessToken.
   res.send('Public area');
 });
 

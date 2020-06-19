@@ -2,11 +2,11 @@
  * Module dependencies.
  */
 
-import express from "express";
-import bodyparser from 'body-parser';
-import request from 'supertest';
-import sinon from 'sinon';
-import should from 'should';
+import * as express from "express";
+import * as bodyparser from 'body-parser';
+import * as request from 'supertest';
+import * as sinon from 'sinon';
+import * as should from 'should';
 import { OAuth2Server as NodeOAuthServer, InvalidArgumentError, UnauthorizedRequestError, Request, Response } from 'oauth2-server-ts';
 import ExpressOAuthServer from "../..";
 
@@ -142,7 +142,7 @@ describe('ExpressOAuthServer', function() {
       request(app.listen())
         .post('/?state=foobiz')
         .set('Authorization', 'Bearer foobar')
-        .send({ client_id: 12345, response_type: 'code' })
+        .send({ clientId: 12345, responseType: 'code' })
         .expect(302, function(err, res){
             spy.called.should.be.True();
             done(err);
@@ -168,10 +168,10 @@ describe('ExpressOAuthServer', function() {
       request(app.listen())
         .post('/?state=foobiz')
         .set('Authorization', 'Bearer foobar')
-        .send({ client_id: 12345 })
+        .send({ clientId: 12345 })
         .expect(400, function(err, res) {
           res.body.error.should.eql('invalid_request');
-          res.body.error_description.should.eql('Missing parameter: `response_type`');
+          res.body.error_description.should.eql('Missing parameter: `responseType`');
           done(err);
         });
     });
@@ -195,7 +195,7 @@ describe('ExpressOAuthServer', function() {
       request(app.listen())
         .post('/?state=foobiz')
         .set('Authorization', 'Bearer foobar')
-        .send({ client_id: 12345, response_type: 'code' })
+        .send({ clientId: 12345, responseType: 'code' })
         .expect('Location', 'http://example.com/?code=123&state=foobiz')
         .end(done);
     });
@@ -238,15 +238,15 @@ describe('ExpressOAuthServer', function() {
 
       request(app.listen())
         .post('/')
-        .send('client_id=foo&client_secret=bar&grant_type=password&username=qux&password=biz')
-        .expect({ access_token: 'foobar', token_type: 'Bearer' })
+        .send('clientId=foo&clientSecret=bar&grantType=password&username=qux&password=biz')
+        .expect({ accessToken: 'foobar', token_type: 'Bearer' })
         .expect(200, function(err, res){
           spy.called.should.be.True();
           done(err);
         });
     });
 
-    it('should return an `access_token`', function(done) {
+    it('should return an `accessToken`', function(done) {
       var model = {
         getClient: function() {
           return { grants: ['password'] };
@@ -264,12 +264,12 @@ describe('ExpressOAuthServer', function() {
       app.use(oauth.token());
       request(app.listen())
         .post('/')
-        .send('client_id=foo&client_secret=bar&grant_type=password&username=qux&password=biz')
-        .expect({ access_token: 'foobar', token_type: 'Bearer' })
+        .send('clientId=foo&clientSecret=bar&grantType=password&username=qux&password=biz')
+        .expect({ accessToken: 'foobar', token_type: 'Bearer' })
         .end(done);
     });
 
-    it('should return a `refresh_token`', function(done) {
+    it('should return a `refreshToken`', function(done) {
       var model = {
         getClient: function() {
           return { grants: ['password'] };
@@ -287,8 +287,8 @@ describe('ExpressOAuthServer', function() {
 
       request(app.listen())
         .post('/')
-        .send('client_id=foo&client_secret=bar&grant_type=password&username=qux&password=biz')
-        .expect({ access_token: 'foobar', refresh_token: 'foobiz', token_type: 'Bearer' })
+        .send('clientId=foo&clientSecret=bar&grantType=password&username=qux&password=biz')
+        .expect({ accessToken: 'foobar', refreshToken: 'foobiz', token_type: 'Bearer' })
         .end(done);
     });
 
