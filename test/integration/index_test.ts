@@ -4,14 +4,13 @@
  * Module dependencies.
  */
 
-var ExpressOAuthServer = require('../../');
-var InvalidArgumentError = require('oauth2-server/lib/errors/invalid-argument-error');
-var NodeOAuthServer = require('oauth2-server');
-var bodyparser = require('body-parser');
-var express = require('express');
-var request = require('supertest');
-var should = require('should');
-var sinon = require('sinon');
+import express from "express";
+import bodyparser from 'body-parser';
+import request from 'supertest';
+import sinon from 'sinon';
+import should from 'should';
+import { OAuth2Server as NodeOAuthServer, InvalidArgumentError, UnauthorizedRequestError, Request, Response } from 'oauth2-server-ts';
+import ExpressOAuthServer from "../..";
 
 /**
  * Test `ExpressOAuthServer`.

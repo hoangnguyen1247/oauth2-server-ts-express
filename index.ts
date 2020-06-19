@@ -3,13 +3,8 @@
 /**
  * Module dependencies.
  */
-
-var InvalidArgumentError = require('oauth2-server/lib/errors/invalid-argument-error');
-var NodeOAuthServer = require('oauth2-server');
-var Promise = require('bluebird');
-var Request = require('oauth2-server').Request;
-var Response = require('oauth2-server').Response;
-var UnauthorizedRequestError = require('oauth2-server/lib/errors/unauthorized-request-error');
+import Promise from 'bluebird';
+import { OAuth2Server as NodeOAuthServer, InvalidArgumentError, UnauthorizedRequestError, Request, Response } from 'oauth2-server-ts';
 
 /**
  * Constructor.
@@ -170,4 +165,4 @@ var handleError = function(e, req, res, response, next) {
  * Export constructor.
  */
 
-module.exports = ExpressOAuthServer;
+export default ExpressOAuthServer;

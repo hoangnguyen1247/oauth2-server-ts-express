@@ -4,13 +4,12 @@
  * Module dependencies.
  */
 
-var ExpressOAuthServer = require('../../');
-var Request = require('oauth2-server').Request;
-var Response = require('oauth2-server').Response;
-var express = require('express');
-var request = require('supertest');
-var sinon = require('sinon');
-var should = require('should');
+import express from "express";
+import request from 'supertest';
+import sinon from 'sinon';
+import should from 'should';
+import { OAuth2Server as NodeOAuthServer, InvalidArgumentError, UnauthorizedRequestError, Request, Response } from 'oauth2-server-ts';
+import ExpressOAuthServer from "../..";
 
 /**
  * Test `ExpressOAuthServer`.

@@ -5,7 +5,7 @@
 
 var bodyParser = require('body-parser');
 var express = require('express');
-var oauthServer = require('oauth2-server');
+var oauthServer = require('oauth2-server-ts');
 
 // Create an Express application.
 var app = express();
