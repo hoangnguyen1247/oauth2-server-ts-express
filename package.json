@@ -1,6 +1,6 @@
 {
     "name": "oauth2-server-ts-express",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "OAuth provider for express",
     "main": "dist/index.js",
     "scripts": {
@@ -28,7 +28,7 @@
     "dependencies": {
         "bluebird": "^3.0.5",
         "express": "^4.13.3",
-        "oauth2-server-ts": "^1.0.7",
+        "oauth2-server-ts": "^1.0.9",
         "typescript": "^3.9.5"
     },
     "devDependencies": {
