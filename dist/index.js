@@ -79,12 +79,14 @@ ExpressOAuthServer.prototype.token = function (options) {
 };
 var handleResponse = function (req, res, response) {
     if (response.status === 302) {
+        res.cookie("accessToken", response.body.accessToken);
         var location = response.headers.location;
         delete response.headers.location;
         res.set(response.headers);
         res.redirect(location);
     }
     else {
+        res.cookie("accessToken", response.body.accessToken);
         res.set(response.headers);
         res.status(response.status).send(response.body);
     }
