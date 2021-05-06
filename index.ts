@@ -123,8 +123,7 @@ ExpressOAuthServer.prototype.token = function (options) {
 /**
  * Handle response.
  */
-var handleResponse = function (req, res, response) {
-
+const handleResponse = function (req, res, response) {
     if (response.status === 302) {
         res.cookie("accessToken", response.body.accessToken);
         var location = response.headers.location;
@@ -142,8 +141,7 @@ var handleResponse = function (req, res, response) {
  * Handle error.
  */
 
-var handleError = function (e, req, res, response, next) {
-
+const handleError = function (e, req, res, response, next) {
     if (this.useErrorHandler === true) {
         next(e);
     } else {
