@@ -7,7 +7,6 @@ import { OAuth2Server as NodeOAuthServer, InvalidArgumentError, UnauthorizedRequ
 /**
  * Constructor.
  */
-
 function ExpressOAuthServer(options) {
     options = options || {};
 
@@ -31,7 +30,6 @@ function ExpressOAuthServer(options) {
  *
  * (See: https://tools.ietf.org/html/rfc6749#section-7)
  */
-
 ExpressOAuthServer.prototype.authenticate = function (options) {
     var that = this;
 
@@ -59,7 +57,6 @@ ExpressOAuthServer.prototype.authenticate = function (options) {
  *
  * (See: https://tools.ietf.org/html/rfc6749#section-3.1)
  */
-
 ExpressOAuthServer.prototype.authorize = function (options) {
     var that = this;
 
@@ -93,7 +90,6 @@ ExpressOAuthServer.prototype.authorize = function (options) {
  *
  * (See: https://tools.ietf.org/html/rfc6749#section-3.2)
  */
-
 ExpressOAuthServer.prototype.token = function (options) {
     var that = this;
 
@@ -162,5 +158,4 @@ const handleError = function (e, req, res, response, next) {
 /**
  * Export constructor.
  */
-
 export default ExpressOAuthServer;
