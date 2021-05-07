@@ -1,6 +1,6 @@
 {
     "name": "oauth2-server-ts-express",
-    "version": "1.0.0-develop.2",
+    "version": "1.2.16-develop.1",
     "description": "OAuth provider for express",
     "main": "dist/index.js",
     "scripts": {
