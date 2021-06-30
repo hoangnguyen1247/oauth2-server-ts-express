@@ -2,6 +2,8 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import oauthServer from 'oauth2-server-ts';
 
+import Model from "./model";
+
 // Create an Express application.
 const app = express();
 
@@ -11,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Add OAuth server.
 app.oauth = oauthServer({
-    model: require('./model')
+    model: new Model(),
 });
 
 // Post token.

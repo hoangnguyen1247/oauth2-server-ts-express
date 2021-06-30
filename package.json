@@ -3,10 +3,17 @@
     "version": "1.2.16-develop.1",
     "description": "OAuth provider for express",
     "main": "dist/index.js",
+    "files": [
+        "dist",
+        "index.ts"
+    ],
     "scripts": {
         "clean:build": "rimraf ./dist",
         "build": "npx tsc -p tsconfig.build.json",
         "build:prod": "yarn clean:build && yarn build",
+        "start-ex": "yarn copy:src-exam && yarn ex-redis",
+        "copy:src-exam": "node ./CopyAndSyncSrcToExam.js",
+        "ex-redis": "cd ./examples/redis && yarn && yarn start",
         "release": "semantic-release",
         "compile": "tsc",
         "type-check": "tsc --noEmit",
@@ -40,6 +47,8 @@
         "@types/mocha": "^7.0.2",
         "@types/node": "^14.10.1",
         "body-parser": "^1.14.1",
+        "copy-dir": "^1.3.0",
+        "fs-extra": "^10.0.0",
         "husky": "^4.3.0",
         "jshint": "^2.12.0",
         "mocha": "^2.5.3",
