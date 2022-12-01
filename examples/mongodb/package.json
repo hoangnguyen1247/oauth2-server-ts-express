@@ -1,0 +1,14 @@
+{
+    "name": "example",
+    "version": "0.0.1",
+    "dependencies": {
+        "oauth2-server-ts-express": "file:../../pack/oauth2-server-ts-express",
+        "mongoose": "^6.7.5"
+    },
+    "devDependencies": {
+        "oauth2-server-ts": "^1.2.16"
+    },
+    "scripts": {
+        "start": "echo Done"
+    }
+}

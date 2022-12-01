@@ -1,0 +1,14 @@
+{
+    "name": "example",
+    "version": "0.0.1",
+    "dependencies": {
+        "oauth2-server-ts-express": "file:../../pack/oauth2-server-ts-express",
+        "pg-promise": "^10.15.4"
+    },
+    "devDependencies": {
+        "oauth2-server-ts": "^1.2.16"
+    },
+    "scripts": {
+        "start": "echo Done"
+    }
+}
