@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "dependencies": {
         "oauth2-server-ts-express": "file:../../pack/oauth2-server-ts-express",
-        "mongoose": "^6.7.5"
+        "mongoose": "^6.11.3"
     },
     "devDependencies": {
         "oauth2-server-ts": "^1.2.16"
